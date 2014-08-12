@@ -16,16 +16,16 @@ class Portfolio():
 		
 	def invest(self, shares, investment):
 		self.withdrawCash(shares * investment.price)
-		if investment in self.investments[investment.getClass()]:
-			self.investments[investment.getClass()][investment] += shares
+		if investment in self.investments[investment.Class()]:
+			self.investments[investment.Class()][investment] += shares
 		else: 
-			self.investments[investment.getClass()][investment] = shares
-		self.history += "Purchases %d shares of %s in %s" % (shares, investment.getClass(), investment.name)
+			self.investments[investment.Class()][investment] = shares
+		self.history += "Purchases %d shares of %s in %s" % (shares, investment.Class(), investment.name)
 		
 	def divest(self, shares, investment):
-		self.investments[investment.getClass()][investment] -= shares
+		self.investments[investment.Class()][investment] -= shares
 		self.addCash(shares * investment.Selling_Price())
-		self.history += "Sells %d shares of %s in %s" % (shares, investment.getClass(), investment.name)
+		self.history += "Sells %d shares of %s in %s" % (shares, investment.Class(), investment.name)
 	
 	def buyStock(self, shares, investment): self.invest(int(shares), investment)
 	
@@ -59,7 +59,7 @@ class Stock(Investment):
 	def __init__(self, price, name):
 		Investment.__init__(self, price, name)
 			
-	def getClass(self): return "stock"
+	def Class(self): return "stock"
 	
 	def Selling_Price(self):
 		return random.uniform(0.5 * self.price, 1.5 * self.price)
@@ -68,7 +68,7 @@ class MutualFund(Investment):
 	def __init__(self, name):
 			Investment.__init__(self, 1.0, name)
 			
-	def getClass(self): return "mutual funds"
+	def Class(self): return "mutual funds"
 		
 portfolio = Portfolio()
 portfolio.addCash(300.50)
