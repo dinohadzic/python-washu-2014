@@ -66,7 +66,7 @@ class Stock(Investment):
 		
 class MutualFund(Investment):
 	def __init__(self, name):
-			Investment.__init__(self, 1.0, name)
+		Investment.__init__(self, 1.0, name)
 			
 	def Class(self): return "mutual funds"
 		
