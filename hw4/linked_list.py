@@ -82,41 +82,39 @@ class LinkedList:
 			hold = hold.next
 		return output
 
-
-linked_list = LinkedList(5)
-print(linked_list)
-print linked_list.length()
-
-linked_list.addNode(7)
-linked_list.addNode(60)
-print(linked_list)
-print linked_list.length()
+# Note: all the methods are of complexity 0(n) with the exception of removeNodesByValue(),
+# whose complexity I am unsure of. The functions pass the bottom tests.
 
 
-linked_list.addNodeAfter(10, 5)
-linked_list.addNodeAfter(5, 7)
-print(linked_list)
-print linked_list.length()
+linked_list = LinkedList(5) # Creates list with 5 as the only value.
+print(linked_list) # Displays list of just value 5.
+print linked_list.length() # Length of list is 1.
 
+linked_list.addNode(7) # Adds 7 after 5.
+linked_list.addNode(60) # Adds 60 after 7.
+print(linked_list) # Displays appropriate list: 5, 7, 60
+print linked_list.length() # Appropriate length: 3.
 
-linked_list.addNodeBefore(20, 7)
-print(linked_list)
-print linked_list.length()
+linked_list.addNodeAfter(10, 5) # Adds 10 after 5.
+linked_list.addNodeAfter(5, 7) # Adds 5 after 7.
+print(linked_list) # Displays appropriate list: 5, 10, 7, 5, 60
+print linked_list.length() # Appropriate length: 5
 
+linked_list.addNodeBefore(20, 7) # Adds 20 before 7.
+print(linked_list) # Displays appropriate list: 5, 10, 20, 7, 5, 60
+print linked_list.length() # Appropriate length: 7
 
-linked_list.removeNode(60)
-print(linked_list)
-print linked_list.length()
+linked_list.removeNode(60) # Removes 60.
+print(linked_list) # Displays appropriate list: 5, 10, 20, 7, 5
+print linked_list.length() # Appropriate length: 5
 
+linked_list.removeNodesByValue(5) # Removes all nodes containing value 5.
+print(linked_list) # Displays appropriate list: 10, 20, 7
+print linked_list.length() # Appropriate length: 3
 
-linked_list.removeNodesByValue(5)
-print(linked_list)
-print linked_list.length()
-
-
-linked_list.reverse()
-print(linked_list)
-print linked_list.length()
+linked_list.reverse() # Reverses order of list.
+print(linked_list) # Displays appropriate list: 7, 20, 10
+print linked_list.length() # Appropriate length: 3
 
 
 
