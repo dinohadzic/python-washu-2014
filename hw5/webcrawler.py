@@ -1,5 +1,5 @@
 # Scraper to collect information from John Patty's blog
-#Dave Carlson and Dino Hadzic
+# Dave Carlson and Dino Hadzic
 
 from BeautifulSoup import BeautifulSoup
 import csv 
