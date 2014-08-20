@@ -31,6 +31,9 @@ while i<len(followed): # Code below extracts 20 most recent tweets from all who 
                 most_active = str(user.name)
         i+=1
     except: time.sleep(.25) # Makes request every 0.25 seconds. Should we hit the limit, waits 0.25 before making another request. Permits for loop to remain active until limit is reset.
+
+print most_followed
+print most_active
     
 # Defining "active" in the following way: (a) extract the 20 most recent tweets from those
 # who Matt follows, (b) calculate the time that has elapsed between the most recent tweet
